@@ -1,0 +1,10 @@
+__pycache__
+*auth.py
+music/
+rpi/
+*-oauth2.json
+*pyc
+client_secrets.json
+ngrok
+.DS_Store
+*.csv
