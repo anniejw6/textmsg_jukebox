@@ -47,7 +47,6 @@ while True:
 			print(row.song_file)
 			player.queue(pyglet.media.load(f + row.song_file))
 			songs_added_name.append(row.song_file)
-			songs_added_id.append(row.id)
 
 	if not player.playing:
 		sources = [pyglet.media.load(f + x) for x in songs]
