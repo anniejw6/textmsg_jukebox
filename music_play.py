@@ -4,8 +4,6 @@ import time
 import os
 # http://pyglet.readthedocs.org/en/latest/programming_guide/media.html
 
-if os.path.isfile('/Users/annie/github/music_text/' + 'songs_found.csv'):
-	os.remove('/Users/annie/github/music_text/' + 'songs_found.csv')
 # Create default song list
 f = '/Users/annie/github/music_text/music/'
 #songs = ['cheek.mp3', 'mack_knife.mp3', 'phantom.mp3']

@@ -18,25 +18,18 @@ from auth import CLIENT_SECRETS_FILE, DEVELOPER_KEY
 
 class YouTube(object):
 
-    def __init__(self, playlist=''):
-        self.youtube = self.authenticate()
+    def __init__(self, playlist='', developer_key = DEVELOPER_KEY):
+        self.youtube = self.authenticate(developer_key)
         self.playlist = playlist
 
-    def authenticate(self):
-        YOUTUBE_READ_WRITE_SCOPE = "https://www.googleapis.com/auth/youtube"
+    def authenticate(self, developer_key):
         YOUTUBE_API_SERVICE_NAME = "youtube"
         YOUTUBE_API_VERSION = "v3"
-        # Try Config
-        flow = flow_from_clientsecrets(CLIENT_SECRETS_FILE,
-                                       message="Missing client secrets file",
-                                       scope=YOUTUBE_READ_WRITE_SCOPE)
-        storage = Storage("%s-oauth2.json" % sys.argv[0])
-        credentials = storage.get()
-        if credentials is None or credentials.invalid:
-            flags = argparser.parse_args()
-            credentials = run_flow(flow, storage, flags)
-        return(build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
-                     http=credentials.authorize(httplib2.Http())))
+
+        youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
+            developerKey=developer_key)
+        
+        return(youtube)
 
     # def create_playlist(self, title_text, description_text,
     # 	privacy = 'unlisted'):
@@ -110,5 +103,6 @@ class YouTube(object):
 
 if __name__ == '__main__':
     x = YouTube()
+    print(x.find_video('hello kitty'))
     print(x.youtube)
     print('success')
