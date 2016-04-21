@@ -32,7 +32,7 @@ while True:
     for index, row in to_youtube.iterrows():
         vid_id = x.find_video(row.term)
         if vid_id is not None:
-            ydl = "youtube-dl -o '%s' -f 140 https://www.youtube.com/watch?v=%s"
+            ydl = "youtube-dl -o '%s' -f 140 %s"
             os.system(ydl % (wd + 'music/' + vid_id + '.%(ext)s', vid_id))
         else:
             vid_id = 'COULD_NOT_FIND'
