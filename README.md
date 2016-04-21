@@ -16,6 +16,7 @@ Follow [these docs](https://www.twilio.com/docs/quickstart/python/sms/sending-vi
 * Run `python serve_twilio.py` to set up the server
 * In a separate terminal window, also run `./ngrok http 5000`
     * Grab the forwarding URL
+    * Add here: https://www.twilio.com/user/account/messaging/phone-numbers
 
 # What's Going On
 
