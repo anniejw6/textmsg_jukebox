@@ -8,3 +8,4 @@ client_secrets.json
 ngrok
 .DS_Store
 *.csv
+redis-stable/
