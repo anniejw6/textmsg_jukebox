@@ -1,4 +1,6 @@
 # Virtual Environment - Python
+
+Actually, this runs in 3.4. Annie just needs to update.
 ```
 virtualenv -p python2.7 rpi
 source rpi/bin/activate
