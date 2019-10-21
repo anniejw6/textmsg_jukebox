@@ -20,5 +20,5 @@ six==1.10.0
 twilio==4.6.0
 uritemplate==0.6
 urllib3==1.12
-Werkzeug==0.11.8
+Werkzeug==0.15.3
 youtube-dl==2016.4.13
